@@ -66,6 +66,8 @@ Soft, convex and analytically-invertible contact dynamics
    algorithms, including a generalization to the projected Gauss-Siedel method that can handle elliptic friction cones.
    The solver provides unified treatment of frictional contacts including torsional and rolling friction, frictionless
    contacts, joint and tendon limits, dry friction in joints and tendons, as well as a variety of equality constraints.
+   
+   접촉 역학에 대한 현대의 접근법에서 마찰 접촉으로 인한 힘 또는 충동은 일반적으로 선형 또는 비선형 상호 보완성 문제 (LCP 또는 NCP)에 대한 해결책으로 정의되며, 둘 다 NP 하드입니다. MuJoCo는 :doc:`computation` 장에 자세히 설명된 바와 같이 볼록한 최적화 문제로 감소하는 접촉 물리학의 다른 공식화를 기반으로 한다. 우리의 모델은 소프트 컨택트 및 기타 제약을 허용하며, 고유하게 정의된 역 촉진 데이터 분석 및 제어 애플리케이션을 가지고 있습니다. 타원 마찰 원뿔을 처리할 수 있는 투영된 가우스-시델 방법에 대한 일반화를 포함하여 최적화 알고리즘의 선택이 있다. 솔버는 비틀림 및 롤링 마찰, 마찰 없는 접점, 조인트 및 힘줄 한계, 조인트 및 힘줄의 건식 마찰뿐만 아니라 다양한 평등 제약을 포함한 마찰 접촉의 unified treatment 를 제공합니다.
 
 Tendon geometry
    MuJoCo can model the 3D geometry of tendons - which are minimum-path-length strings obeying wrapping and via-point
@@ -73,6 +75,8 @@ Tendon geometry
    wrapping options to speed up computation. It also offers robotics-specific structures such as pulleys and coupled
    degrees of freedom. Tendons can be used for actuation as well as to impose inequality or equality constraints on the
    tendon length.
+   
+   MuJoCo는 힘줄의 3D 기하학을 모델링할 수 있다. 힘줄 - 래핑과 경유점 제약을 준수하는 최소 경로 길이 strings 이다. 이 메커니즘은 OpenSim의 메커니즘과 비슷하지만 계산 속도를 높이기 위해 더 제한적이고 닫힌 형태의 래핑 옵션 세트를 구현합니다. 그것은 또한 도르래와 결합된 자유도와 같은 로봇 특유의 구조를 제공한다. 힘줄은 힘줄 길이에 불평등이나 평등 제약을 부과할 뿐만 아니라 작동에도 사용될 수 있다.
 
 General actuation model
    Designing a sufficiently rich actuation model while using a model-agnostic API is challenging. MuJoCo achieves this
@@ -80,6 +84,8 @@ General actuation model
    internal dynamics (i.e. state variables which make the overall dynamics 3rd order). These components can be
    instantiated so as to model motors, pneumatic and hydraulic cylinders, PD controllers, biological muscles and many
    other actuators in a unified way.
+   
+   모델에 구애받지 않는 API를 사용하는 동안 충분히 풍부한 작동 모델을 설계하는 것은 어렵다. MuJoCo는 다양한 유형의 전송, 힘 생성 및 내부 역학 (즉, 전체 역학 3 순서를 만드는 상태 변수)을 가질 수있는 추상 작동 모델을 채택함으로써이 목표를 달성합니다. 이 구성 요소들은 모델 모터, 공압 및 유압 실린더, PD 컨트롤러, 생물학적 근육 및 기타 많은 액추에이터를 통합 방식으로 인스턴스화할 수 있습니다.
 
 Reconfigurable computation pipeline
    MuJoCo has a top-level stepper function :ref:`mj_step` which runs the entire forward dynamics and advances the state
