@@ -4,14 +4,16 @@
 general purpose physics engine that aims to facilitate research and development
 in robotics, biomechanics, graphics and animation, machine learning, and other
 areas which demand fast and accurate simulation of articulated structures
-interacting with their environment.
+interacting with their environment. <br>
 로봇 공학, 생체역학, 그래픽 및 애니메이션, 기계 학습 및 환경과 상호 작용하는 관절 구조의 빠르고 
 정확한 시뮬레이션을 요구하는 기타 분야의 연구 개발을 촉진하는 것을 목표로 하는 범용 물리학 엔진입니다.
 
 DeepMind has acquired MuJoCo, and we are currently making preparations to open
 source the codebase. In the meantime, MuJoCo is available for download as a free
 and unrestricted precompiled binary under the Apache 2.0 license from
-[mujoco.org](https://mujoco.org/).
+[mujoco.org](https://mujoco.org/). <br>
+DeepMind는 MuJoCo를 인수했고, 우리는 현재 코드베이스를 오픈소스로 준비하고 있다.
+그동안 MuJoCo는 mujoco.org의 Apache 2.0 라이센스에 따라 무료 및 무제한 사전 컴파일 바이너리로 다운로드할 수 있습니다.
 
 MuJoCo's source code will be released through this GitHub repository once it is
 ready. In the meantime, the repository hosts MuJoCo's documentation, C header
