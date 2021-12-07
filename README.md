@@ -63,9 +63,9 @@ MuJoCo는 물리학 관련 quantities 을 계산하기 위한 많은 유틸리�
 
 -   Actuators including motors, cylinders, muscles, tendons, slider-cranks.
 
--   Choice of [Newton, Conjugate Gradient, Projected Gauss-Seidel solvers]
-    Conjugate Gradient : https://en.wikipedia.org/wiki/Conjugate_gradient_method
-    Gauss-Seidel solvers : https://ko.wikipedia.org/wiki/가우스-자이델_방법
+-   Choice of [Newton, Conjugate Gradient, Projected Gauss-Seidel solvers]. <br>
+    Conjugate Gradient : https://en.wikipedia.org/wiki/Conjugate_gradient_method<br>
+    Gauss-Seidel solvers : https://ko.wikipedia.org/wiki/가우스-자이델_방법<br>
     The projected Gauss-Seidel (PGS) method is an extension of Gauss-Seidel used to solve MLCP's ...
     
 
