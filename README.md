@@ -46,7 +46,7 @@ MuJoCo는 연구원과 개발자를 위한 C API를 갖춘 C/C++ 라이브러리
 사용자는 네이티브 MJCF Scene descriptinon 언어(XML 파일 형식, 사람이 읽을 수 있고 편집할 수 있도록 설계)로 모델을 정의합니다. 
 URDF 모델 파일도 로드할 수 있습니다.
 library는 OpenGL로 렌더링된 네이티브 GUI와의 대화식 시각화를 포함한다.
-MuJoCo는 물리학 관련 수량을 계산하기 위한 많은 유틸리티 기능을 노출한다, 시뮬레이션 루프에서 반드시 있는 것은 아니지만.
+MuJoCo는 물리학 관련 quantities 을 계산하기 위한 많은 유틸리티 기능을 노출한다, 시뮬레이션 루프에서 반드시 있는 것은 아니지만.
 특징은 다음과 같습니다.
 
 
@@ -63,7 +63,11 @@ MuJoCo는 물리학 관련 수량을 계산하기 위한 많은 유틸리티 기
 
 -   Actuators including motors, cylinders, muscles, tendons, slider-cranks.
 
--   Choice of Newton, Conjugate Gradient, or Projected Gauss-Seidel solvers.
+-   Choice of [Newton, Conjugate Gradient, Projected Gauss-Seidel solvers]
+    Conjugate Gradient : https://en.wikipedia.org/wiki/Conjugate_gradient_method
+    Gauss-Seidel solvers : https://ko.wikipedia.org/wiki/가우스-자이델_방법
+    The projected Gauss-Seidel (PGS) method is an extension of Gauss-Seidel used to solve MLCP's ...
+    
 
 -   Choice of pyramidal or elliptic friction cones, dense or sparse Jacobians.
 
