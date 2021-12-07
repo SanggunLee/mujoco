@@ -42,10 +42,12 @@ large number of utility functions for computing physics-related quantities, not
 necessarily in a simulation loop. Features include
 
 MuJoCo는 연구원과 개발자를 위한 C API를 갖춘 C/C++ 라이브러리이다.
-런타임 시뮬레이션 모듈은 성능을 극대화하기 위해 조정되며 내장 XML 파서와 컴파일러에 의해 사전 할당된 low-level 데이터 구조에서 작동합니다.
-사용자는 네이티브 MJCF Scene descriptinon 언어로 모델을 정의합니다. XML 파일 형식은 사람이 읽을 수 있고 편집할 수 있도록 설계되었습니다.
-URDF 모델 파일도 로드할 수 있습니다. 그 library는 OpenGL로 렌더링된 네이티브 GUI와의 대화식 시각화를 포함한다.
-MuJoCo는 또한 시뮬레이션 루프에서 반드시 있는 것은 아니지만, 물리학 관련 수량을 계산하기 위한 많은 유틸리티 기능을 노출한다. 특징은 다음과 같습니다
+런타임 시뮬레이션 모듈은 성능을 극대화하기 위해 튜닝되며 내장 XML 파서와 컴파일러에 의해 사전 할당된 low-level 데이터 구조에서 작동합니다.
+사용자는 네이티브 MJCF Scene descriptinon 언어(XML 파일 형식, 사람이 읽을 수 있고 편집할 수 있도록 설계)로 모델을 정의합니다. 
+URDF 모델 파일도 로드할 수 있습니다.
+library는 OpenGL로 렌더링된 네이티브 GUI와의 대화식 시각화를 포함한다.
+MuJoCo는 물리학 관련 수량을 계산하기 위한 많은 유틸리티 기능을 노출한다, 시뮬레이션 루프에서 반드시 있는 것은 아니지만.
+특징은 다음과 같습니다.
 
 
 -   Simulation in generalized coordinates, avoiding joint violations.
