@@ -85,7 +85,7 @@ General actuation model
    instantiated so as to model motors, pneumatic and hydraulic cylinders, PD controllers, biological muscles and many
    other actuators in a unified way.
    
-   모델에 구애받지 않는 API를 사용하는 동안 충분히 풍부한 작동 모델을 설계하는 것은 어렵다. MuJoCo는 다양한 유형의 전송, 힘 생성 및 내부 역학 (즉, 전체 역학 3 순서를 만드는 상태 변수)을 가질 수있는 추상 작동 모델을 채택함으로써이 목표를 달성합니다. 이 구성 요소들은 모델 모터, 공압 및 유압 실린더, PD 컨트롤러, 생물학적 근육 및 기타 많은 액추에이터를 통합 방식으로 인스턴스화할 수 있습니다.
+   모델에 구애받지 않는 API를 사용하면서 충분히 풍부한 작동 모델을 설계하는 것은 어렵습니다. MuJoCo는 다른 유형의 전달, 힘 생성 및 내부 역학(즉, 전체 역학을 3차로 만드는 상태 변수)을 가질 수 있는 추상 작동 모델을 채택하여 이 목표를 달성합니다. 이러한 구성 요소를 인스턴스화하여 모터, 공압 및 유압 실린더, PD 컨트롤러, 생물학적 근육 및 기타 여러 액추에이터를 통합된 방식으로 모델링할 수 있습니다.
 
 Reconfigurable computation pipeline
    MuJoCo has a top-level stepper function :ref:`mj_step` which runs the entire forward dynamics and advances the state
@@ -94,6 +94,8 @@ Reconfigurable computation pipeline
    set in any combination, allowing the user to reconfigure the pipeline as needed, beyond the selection of algorithms
    and algorithm parameters via :ref:`options <option>`. Furthermore many lower-level functions can be called directly.
    User-defined callbacks can implement custom force fields, actuators, collision routines, and feedback controllers.
+   
+   MuJoCo에는 전체 순방향 역학을 실행하고 시뮬레이션 상태를 진행하는 최상위 스테퍼 기능 :ref:`mj_step` 이 있습니다. 그러나 시뮬레이션 이외의 많은 응용 프로그램에서는 계산 파이프라인의 선택된 부분을 실행할 수 있는 것이 좋습니다. 이를 위해 MuJoCo는 많은 수의 :ref:`flags <option-flag>` 를 제공하며, 이는 사용자가 :ref 를 통해 알고리즘 및 알고리즘 매개변수를 선택하는 것을 넘어 필요에 따라 파이프라인을 재구성할 수 있도록 합니다 . `옵션 <옵션>` . 또한 많은 하위 수준 함수를 직접 호출할 수 있습니다. 사용자 정의 콜백은 사용자 정의 포스 필드, 액추에이터, 충돌 루틴 및 피드백 컨트롤러를 구현할 수 있습니다.
 
 Model compilation
    As mentioned above, the user defines a MuJoCo model in an XML file format called MJCF. This model is then compiled by
