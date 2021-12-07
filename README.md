@@ -5,21 +5,29 @@ general purpose physics engine that aims to facilitate research and development
 in robotics, biomechanics, graphics and animation, machine learning, and other
 areas which demand fast and accurate simulation of articulated structures
 interacting with their environment. <br>
-로봇 공학, 생체역학, 그래픽 및 애니메이션, 기계 학습 및 환경과 상호 작용하는 관절 구조의 빠르고 
+
+로봇 공학, 생체역학, 그래픽 및 애니메이션, 기계 학습 및 환경과 상호 작용하는 관절 구조의 빠르고
 정확한 시뮬레이션을 요구하는 기타 분야의 연구 개발을 촉진하는 것을 목표로 하는 범용 물리학 엔진입니다.
 
 DeepMind has acquired MuJoCo, and we are currently making preparations to open
 source the codebase. In the meantime, MuJoCo is available for download as a free
 and unrestricted precompiled binary under the Apache 2.0 license from
 [mujoco.org](https://mujoco.org/). <br>
-DeepMind는 MuJoCo를 인수했고, 우리는 현재 코드베이스를 오픈소스로 준비하고 있다.
-그동안 MuJoCo는 mujoco.org의 Apache 2.0 라이센스에 따라 무료 및 무제한 사전 컴파일 바이너리로 다운로드할 수 있습니다.
+
+DeepMind는 MuJoCo를 인수했고, 우리는 현재 코드베이스를 오픈소스로 준비하고 있다.<br>
+그동안 MuJoCo는 mujoco.org의 Apache 2.0 라이센스에 따라 무료 및 무제한 사전 컴파일 바이너리로 다운로드할 수 있습니다.<br>
 
 MuJoCo's source code will be released through this GitHub repository once it is
 ready. In the meantime, the repository hosts MuJoCo's documentation, C header
 files for its public API, and sample program code. If you wish to report bugs or
 make feature requests, please file them as [GitHub Issues]. You are also
-welcome to make pull requests for the [documentation source files].
+welcome to make pull requests for the [documentation source files].<br>
+
+MuJoCo의 소스 코드는 준비가 되면 이 GitHub 저장소를 통해 공개될 것이다.<br>
+그동안 저장소는 MuJoCo의 문서, 공개 API를 위한 C 헤더 파일 및 샘플 프로그램 코드를 호스팅합니다.<br> 
+버그를 보고하거나 기능 요청을 하려면 GitHub Issues로 제출하십시오. 문서 소스 파일에 대한 풀 리퀘스트를 할 수도 있습니다.<br>
+
+
 
 ## Overview
 
@@ -32,6 +40,13 @@ URDF model files can also be loaded. The library includes interactive
 visualization with a native GUI, rendered in OpenGL. MuJoCo further exposes a
 large number of utility functions for computing physics-related quantities, not
 necessarily in a simulation loop. Features include
+
+MuJoCo는 연구원과 개발자를 위한 C API를 갖춘 C/C++ 라이브러리이다.
+런타임 시뮬레이션 모듈은 성능을 극대화하기 위해 조정되며 내장 XML 파서와 컴파일러에 의해 사전 할당된 low-level 데이터 구조에서 작동합니다.
+사용자는 네이티브 MJCF Scene descriptinon 언어로 모델을 정의합니다. XML 파일 형식은 사람이 읽을 수 있고 편집할 수 있도록 설계되었습니다.
+URDF 모델 파일도 로드할 수 있습니다. 그 library는 OpenGL로 렌더링된 네이티브 GUI와의 대화식 시각화를 포함한다.
+MuJoCo는 또한 시뮬레이션 루프에서 반드시 있는 것은 아니지만, 물리학 관련 수량을 계산하기 위한 많은 유틸리티 기능을 노출한다. 특징은 다음과 같습니다
+
 
 -   Simulation in generalized coordinates, avoiding joint violations.
 
