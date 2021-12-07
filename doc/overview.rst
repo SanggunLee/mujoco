@@ -12,6 +12,8 @@ Initially developed by Roboti LLC, it was acquired and made `freely available
 open-source project. The MuJoCo codebase will be made available at the `deepmind/mujoco
 <https://github.com/deepmind/mujoco>`__ repository on GitHub.
 
+MuJoCo는 Contact와 Multi-Joint dynamics의 약자이다. 로봇 공학, 생체역학, 그래픽 및 애니메이션, 기계 학습 및 환경과 상호 작용하는 관절 구조의 빠르고 정확한 시뮬레이션을 요구하는 기타 분야의 연구 개발을 촉진하는 것을 목표로 하는 범용 물리학 엔진입니다. Roboti LLC에 의해 처음 개발되었으며, MuJoCo를 오픈 소스 프로젝트로 만드는 것을 목표로 2021년 10월에 DeepMind에 인수되고 자유롭게 이용할 수 있게 되었다. MuJoCo 코드베이스는 GitHub의 deepmind/mujoco 저장소에서 사용할 수 있게 될 것이다.
+
 MuJoCo is a C/C++ library with a C API, intended for researchers and developers. The runtime simulation module is tuned
 to maximize performance and operates on low-level data structures which are preallocated by the built-in XML parser and
 compiler. The user defines models in the native MJCF scene description language -- an XML file format designed to be as
@@ -19,10 +21,14 @@ human readable and editable as possible. URDF model files can also be loaded. Th
 visualization with a native GUI, rendered in OpenGL. MuJoCo further exposes a large number of utility functions for
 computing physics-related quantities.
 
+MuJoCo는 연구원과 개발자를 위한 C API를 갖춘 C/C++ 라이브러리이다. 런타임 시뮬레이션 모듈은 성능을 극대화하기 위해 조정되며 내장 XML 파서와 컴파일러에 의해 사전 할당된 낮은 수준의 데이터 구조에서 작동합니다. 사용자는 네이티브 MJCF 장면 설명 언어로 모델을 정의합니다. XML 파일 형식은 사람이 읽을 수 있고 편집할 수 있도록 설계되었습니다. URDF 모델 파일도 로드할 수 있습니다. 그 도서관은 OpenGL로 렌더링된 네이티브 GUI와의 대화식 시각화를 포함한다. MuJoCo는 물리 관련 수량을 계산하기 위한 많은 수의 유틸리티 기능을 추가로 노출한다.
+
 MuJoCo can be used to implement model-based computations such as control synthesis, state estimation, system
 identification, mechanism design, data analysis through inverse dynamics, and parallel sampling for machine learning
 applications. It can also be used as a more traditional simulator, including for gaming and interactive virtual
 environments.
+
+MuJoCo는 제어 합성, 상태 추정, 시스템 식별, 메커니즘 설계, 역역학을 통한 데이터 분석 및 기계 학습 응용 프로그램의 병렬 샘플링과 같은 모델 기반 계산을 구현하는 데 사용할 수 있습니다. 그것은 또한 게임과 대화형 가상 환경을 포함하여 더 전통적인 시뮬레이터로 사용될 수 있다.
 
 
 .. _Features:
@@ -43,6 +49,13 @@ Generalized coordinates combined with modern contact dynamics
    simulators have more recently been adapted to use MuJoCo's approach, but that is not usually compatible with all of
    their functionality because they were not designed to do this from the start. Users accustomed to gaming engines may
    find the generalized coordinates counterintuitive at first; see :ref:`Clarifications` section below.
+   
+   물리학 엔진은 전통적으로 두 가지 범주로 분리되었다.
+   로봇과 생체역학 엔진은 일반화 또는 관절 좌표에서 효율적이고 정확한 재귀 알고리즘을 사용한다. 그러나 그들은 접촉 역학을 빼거나, 매우 작은 시간 단계를 필요로 하는 초기 Spring-댐퍼 접근법에 의존한다. 
+   게임 엔진은 최적화 문제를 해결함으로써 접촉력이 발견되는 보다 현대적인 접근 방식을 사용한다. 그러나, 그들은 종종 관절 제약이 수치적으로 부과되는 지나치게 지정된 데카르트 표현에 의존하여 정교한 운동학 구조가 관여할 때 부정확성과 불안정을 야기한다.
+   MuJoCo는 두 세계의 최고를 결합한 최초의 범용 엔진이었다: 일반화된 좌표와 최적화 기반 접촉 역학의 시뮬레이션. 다른 시뮬레이터들은 최근에 MuJoCo의 접근법을 사용하도록 조정되었지만, 처음부터 이것을 하도록 설계되지 않았기 때문에 일반적으로 모든 기능과 호환되지 않습니다. 게임 엔진에 익숙한 사용자들은 처음에는 일반화된 좌표가 직관적이지 않을 수 있습니다. 아래의 :ref:`Clarifications` 섹션을 참조하십시오.
+   
+   
 
 Soft, convex and analytically-invertible contact dynamics
    In the modern approach to contact dynamics, the forces or impulses caused by frictional contacts are usually defined
